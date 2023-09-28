@@ -1,3 +1,5 @@
 /build
 /builddir
 /.vscode
+/memorylatency-i386
+/memorylatency-x86_64
