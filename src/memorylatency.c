@@ -83,7 +83,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    printf("Region,Latency (ns)\n");
+    printf("%1s Region,\tLatency (ns)\n", "");
     for (long unsigned int i = 0; i < sizeof(default_test_sizes) / sizeof(int); i++) {
         if (maxTestSizeMB == 0 || default_test_sizes[i] <= maxTestSizeMB * 1024) {
             floating_t result = RunTest(default_test_sizes[i], ITERATIONS, useAsm);
@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
                 printf("Stopping at %d KB.\n", default_test_sizes[i]);
                 return 2;
             }
-            printf("%d,%.5g\n", default_test_sizes[i], result);
+            printf("%8d,\t%.5g\n", default_test_sizes[i], result);
         } else {
             printf("Stopping at %d KB.\n", maxTestSizeMB * 1024);
             break;
